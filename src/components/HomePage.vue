@@ -1,6 +1,33 @@
 <template>
   <div class="dashboard">
+    <nav-bar
+      default_nav_link="#profile"
+      :nav_items="[
+        {
+          nav_name: 'Home',
+          nav_link: '#profile'
+        },
+        {
+          nav_name: 'Work Experience',
+          nav_link: '#work_experience'
+        },
+        {
+          nav_name: 'Education',
+          nav_link: '#education'
+        },
+        {
+          nav_name: 'Projects',
+          nav_link: '#projects'
+        },
+        {
+          nav_name: 'Skills',
+          nav_link: '#knowledge'
+        }
+      ]"
+    >
+    </nav-bar>
     <profile
+      id="profile"
       name="Dinesh.S"
       designation="Software Developer"
       description="Hello! 
@@ -13,6 +40,7 @@
       email="dineshsaratha8@gmail.com"
     ></profile>
     <timeline
+      id="work_experience"
       title="Work Experience"
       :timeline_data="[
         {
@@ -36,6 +64,7 @@
       ]"
     ></timeline>
     <timeline
+      id="education"
       title="Education"
       :timeline_data="[
         {
@@ -61,6 +90,7 @@
     ></timeline>
 
     <timeline
+      id="projects"
       title="Project Activities"
       :timeline_data="[
         {
@@ -175,6 +205,7 @@
     ></timeline>
 
     <timeline
+      id="knowledge"
       title="Source of Knowledge"
       :timeline_data="[
         {
@@ -216,11 +247,13 @@
 <script>
 import Timeline from "./Timeline.vue";
 import Profile from "./Profile.vue";
+import NavBar from "./NavBar.vue";
 export default {
   name: "HomePage",
   components: {
     Timeline,
-    Profile
+    Profile,
+    NavBar
   },
   props: {}
 };
