@@ -1,15 +1,14 @@
 <template>
-  <div class="box" ref="nav_bar">
-    <ul id="nav_menu">
-      <li
-        v-for="nav_item in nav_items"
-        :key="nav_item.nav_name"
-        :class="{ isActive: currentActiveRoute == nav_item.nav_link }"
-      >
+  <nav class="box" ref="nav_bar">
+    <div class="navbar-toggle" @click="isNavBarOpen = !isNavBarOpen">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul id="nav_menu" :class="{ isOpen: isNavBarOpen }">
+      <li v-for="nav_item in nav_items" :key="nav_item.nav_name">
         <a :href="nav_item.nav_link">{{ nav_item.nav_name }}</a>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 <script>
 import jQuery from "jquery";
@@ -22,7 +21,7 @@ export default {
   },
   data() {
     return {
-      currentActiveRoute: ""
+      isNavBarOpen: false
     };
   },
   mounted() {
@@ -96,37 +95,85 @@ export default {
 body {
   background-color: #fff;
 }
+@media screen and (min-width: 320px) {
+  .navbar-toggle {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+  .fa-bars {
+    font-size: 22px;
+  }
+  .box {
+    width: 100%;
+    min-height: 32px;
+    background: #2e4a62;
+    padding: 5px 0px 1px 0px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    line-height: 20px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    z-index: 10;
+    position: sticky;
+    top: 0px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: none;
+  }
+  ul > li {
+    padding: 2px 0px;
+  }
 
-.box {
-  width: 80%;
-  margin: 0px auto;
-  padding: 2px;
-  background: #2e4a62;
-  border-radius: 4px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  line-height: 20px;
-  font-family: "Montserrat", sans-serif;
-  color: #fff;
-  z-index: 10;
-  position: sticky;
-  top: 0px;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .isActive {
+    color: #94ff92;
+    font-size: 20px;
+  }
+  .isOpen {
+    display: block;
+  }
 }
-ul {
-  display: flex;
-  list-style: none;
-  justify-content: flex-end;
-}
-ul > li {
-  padding: 0px 7px;
-  margin: 0;
-}
+@media screen and (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+  .box {
+    width: 80%;
+    margin: 0px auto;
+    padding: 2px;
+    background: #2e4a62;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    line-height: 20px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    z-index: 10;
+    position: sticky;
+    top: 0px;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+  }
+  ul > li {
+    padding: 0px 7px;
+    margin: 0;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-.isActive {
-  color: #94ff92;
-  font-size: 20px;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .isActive {
+    color: #94ff92;
+    font-size: 20px;
+  }
 }
 </style>

@@ -4,7 +4,7 @@
       default_nav_link="#profile"
       :nav_items="[
         {
-          nav_name: 'Home',
+          nav_name: 'About',
           nav_link: '#profile'
         },
         {
