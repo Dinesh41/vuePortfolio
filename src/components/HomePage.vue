@@ -24,18 +24,16 @@
           nav_link: '#knowledge'
         }
       ]"
-    >
-    </nav-bar>
+    ></nav-bar>
     <profile
       id="profile"
       name="Dinesh.S"
       designation="Software Developer"
       description="Hello! 
-      I'm a normal person in this world trying to survive. 
-      Currently surviving by developing android apps.
-       I started my journey towards mobile app development by taking courses from Udemy. 
-       Then I applied that knowledge to solve some industrial problems with the help of Origa Labs (Last company I worked with) and of course, 
-       I gained some knowledge from my colleagues."
+      I'm a lover of exploring. 
+      I starting exploring some of magics happening in software development.
+      Then i found that's not magic, that's programming.
+      Now I am developing  softwares, websites using the knowledge that i grabbed from some amazing people and documents."
       phone="+91 8778839742"
       email="dineshsaratha8@gmail.com"
     ></profile>
@@ -44,12 +42,21 @@
       title="Work Experience"
       :timeline_data="[
         {
+          yearStart: 'Dec 2019',
+          yearEnd: 'Present',
+          data: [
+            'Mobile Developer',
+            'iCT Group India Private Limited',
+            'Developing Applications and websites.'
+          ]
+        },
+        {
           yearStart: 'Oct 2018',
           yearEnd: 'Nov 2019',
           data: [
             'Software Engineer',
             'Armstrong Labs Private Limited',
-            'Developed Application for AR Device'
+            'Developed Applications for AR Device'
           ]
         },
         {
@@ -93,6 +100,18 @@
       id="projects"
       title="Project Activities"
       :timeline_data="[
+        {
+          yearStart: '',
+          yearEnd: '',
+          data: [
+            'Personal Portfolio',
+            'Languages Used: Vue JS',
+            'A personal portfolio developed using vue js'
+          ],
+          footer: {
+            github: 'https://github.com/Dinesh41/vuePortfolio'
+          }
+        },
         {
           yearStart: '',
           yearEnd: '',
