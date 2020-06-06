@@ -31,7 +31,7 @@
       designation="Software Developer"
       description="Hello! 
       I'm a lover of exploring. 
-      I starting exploring some of magics happening in software development.
+      I started exploring some of magics happening in software development.
       Then i found that's not magic, that's programming.
       Now I am developing  softwares, websites using the knowledge that i grabbed from some amazing people and documents."
       phone="+91 8778839742"
